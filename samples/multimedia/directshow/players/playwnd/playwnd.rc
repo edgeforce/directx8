@@ -1,0 +1,44 @@
+//==========================================================================;
+//
+//  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+//  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+//  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+//  PURPOSE.
+//
+//  Copyright (c) 1998 - 2000  Microsoft Corporation.  All Rights Reserved.
+//
+//--------------------------------------------------------------------------;
+//
+//   Resource file for Video in window movie player sample
+//
+
+
+#include <windows.h>
+#include "playwnd.h"
+
+IDR_MENU MENU DISCARDABLE
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open clip...",       ID_FILE_OPENCLIP
+        MENUITEM "E&xit",               ID_FILE_EXIT
+    END
+
+    POPUP "&Control"
+    BEGIN
+        MENUITEM "&Pause/Play",         ID_FILE_PAUSE
+        MENUITEM "&Stop",               ID_FILE_STOP
+        MENUITEM "&Close clip",         ID_FILE_CLOSE
+        MENUITEM "&Mute/Unmute",        ID_FILE_MUTE
+        MENUITEM SEPARATOR
+        MENUITEM "&Half\t (50%)",       ID_FILE_SIZE_HALF
+        MENUITEM "&Three-quarter\t (75%)", ID_FILE_SIZE_THREEQUARTER
+        MENUITEM "&Normal\t (100%)",    ID_FILE_SIZE_NORMAL
+        MENUITEM "&Double\t (200%)",    ID_FILE_SIZE_DOUBLE
+        MENUITEM SEPARATOR
+        MENUITEM "&Full Screen",        ID_FILE_FULLSCREEN
+    END
+
+END
+
+IDI_INWINDOW ICON playwnd.ico

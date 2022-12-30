@@ -1,0 +1,156 @@
+<!-- This shows using the compositor transition to show playing       -->
+<!-- four movies at once!                                             -->
+
+<timeline>
+  <group type="video" BitDepth="16" Width="320" Height="240">
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\skiing.avi" start="0" stop="5" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="0" stop="5">
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\ruby.avi" start="0" stop="5" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="0" stop="5">
+    	    <param name="OffsetX" value="160"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\water.mpg" start="0" stop="5" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="0" stop="5">
+    	    <param name="OffsetY" value="120"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\butterfly.mpg" start="0" stop="5" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="0" stop="5">
+    	    <param name="OffsetX" value="160"/>
+    	    <param name="OffsetY" value="120"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+
+
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\water.mpg" start="5" stop="10" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="5" stop="10">
+    	    <param name="OffsetX" value="0"/>
+    	    <param name="OffsetY" value="0"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\skiing.avi" start="5" stop="10" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="5" stop="10">
+    	    <param name="OffsetX" value="160"/>
+    	    <param name="OffsetY" value="0"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\butterfly.mpg" start="5" stop="10" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="5" stop="10">
+    	    <param name="OffsetX" value="0"/>
+    	    <param name="OffsetY" value="120"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\ruby.avi" start="5" stop="10" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="5" stop="10">
+    	    <param name="OffsetX" value="160"/>
+    	    <param name="OffsetY" value="120"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+
+
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\ruby.avi" start="10" stop="13" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="10" stop="13">
+    	    <param name="OffsetX" value="0"/>
+    	    <param name="OffsetY" value="0"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\skiing.avi" start="10" stop="13" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="10" stop="13">
+    	    <param name="OffsetX" value="160"/>
+    	    <param name="OffsetY" value="0"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\butterfly.mpg" start="10" stop="13" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="10" stop="13">
+    	    <param name="OffsetX" value="0"/>
+    	    <param name="OffsetY" value="120"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\water.mpg" start="10" stop="13" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="10" stop="13">
+    	    <param name="OffsetX" value="160"/>
+    	    <param name="OffsetY" value="120"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+
+
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\ruby.avi" start="13" stop="16" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="13" stop="16">
+    	    <param name="OffsetX" value="0"/>
+    	    <param name="OffsetY" value="0"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\butterfly.mpg" start="13" stop="16" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="13" stop="16">
+    	    <param name="OffsetX" value="160"/>
+    	    <param name="OffsetY" value="0"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\skiing.avi" start="13" stop="16" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="13" stop="16">
+    	    <param name="OffsetX" value="0"/>
+    	    <param name="OffsetY" value="120"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+    <vtrack>
+        <clip src="c:\mssdk\samples\multimedia\media\water.mpg" start="13" stop="16" mstart="0" />
+        <transition clsid="{BB44391D-6ABD-422f-9E2E-385C9DFF51FC}" start="13" stop="16">
+    	    <param name="OffsetX" value="160"/>
+    	    <param name="OffsetY" value="120"/>
+            <param name="Width" value="160"/>
+            <param name="Height" value="120"/>
+        </transition>
+    </vtrack>
+
+  </group>
+</timeline>
+
+

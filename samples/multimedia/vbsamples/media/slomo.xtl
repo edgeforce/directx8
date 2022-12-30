@@ -1,0 +1,42 @@
+<!-- In this example, you will see a 400x300 24 bit movie.  The first clip  -->
+<!-- will be in slow motion, and use the "crop" mode of stretching, and the -->
+<!-- second clip will be sped up, and use the "PreserveAspectRatio" mode of -->
+<!-- stretching.  There will be a fade transition between the two.          -->
+<!-- Also, the audio will crossfade using the volume effect, and since      -->
+<!-- the second clip is much louder than the first, the second clip's audio -->
+<!-- volume will be cut.                                                    -->
+
+
+<timeline>
+  <group type="video" FrameRate="15" Width="400" Height="300" BitDepth="24">
+    <track>
+	<clip src="c:\mssdk\samples\multimedia\media\butterfly.mpg" start="0" stop="6" mstart="2" mstop="4.5" StretchMode="crop" />
+    </track>
+    <track>
+	<clip src="c:\mssdk\samples\multimedia\media\clocktxt.avi" start="6" stop="9" mstart="0" mstop="10" StretchMode="PreserveAspectRatio"/>
+	<transition clsid="{16b280c5-ee70-11d1-9066-00c04fd9189d}" start="6" stop="8" />
+    </track>
+  </group>
+
+  <group type="audio">
+    <track>
+	<clip src="c:\mssdk\samples\multimedia\media\piano2.mp3" start="0" stop="6" mstart="4" mstop="8"/>
+	  <effect clsid="{036A9790-C153-11d2-9EF7-006008039E37}" start="0" stop="6">
+	  <param name="vol" value="1">
+	    <linear time="6" value=".5"/>
+	  </param>
+	  </effect>
+    </track>
+
+    <track>
+	<clip src="c:\mssdk\samples\multimedia\media\clocktxt.avi" start="6" stop="9" mstart="0" mstop="10"/>
+	  <effect clsid="{036A9790-C153-11d2-9EF7-006008039E37}" start="6" stop="9">
+	  <param name="vol" value=".2">
+	  </param>
+	  </effect>
+    </track>
+  </group>
+
+</timeline>
+
+

@@ -1,0 +1,21 @@
+<!-- In this example, a bitmap is superimposed on an AVI by color keying    -->
+<!-- out the reddish regions of the bitmap.                                 -->
+
+<timeline>
+  <group type="video" bitdepth="24">
+	<track>
+	        <clip src="c:\mssdk\samples\multimedia\Media\lake.mpg" start="0" stop="4" mstart="0"/>
+	</track>
+	<track>
+		<clip src="c:\mssdk\samples\multimedia\Media\flag.bmp" start="0" stop="4" mstart="0"/>
+		<transition clsid="{C5B19592-145E-11d3-9F04-006008039E37}" start="0" stop="4" >
+		<param name="KeyType"	value="0"/>
+		<param name="RGB"  value="DE3129"/>
+                <param name="Progress" value="1.0"/>
+		</transition>
+        </track>
+  
+  </group>
+</timeline>
+
+

@@ -1,0 +1,141 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 1998  Microsoft Corporation.  All Rights Reserved.
+ *
+ **************************************************************************/
+
+#include "windows.h"
+#include "DDrawXcl.h"
+#include "winver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+DDrawXcl                ICON    DISCARDABLE     "DDrawXcl.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+DDrawXcl MENU DISCARDABLE
+BEGIN
+	POPUP "&Options"
+	BEGIN
+		MENUITEM "Select &DVD...",              IDM_SELECTDVD
+		MENUITEM "Select &File...",             IDM_SELECTFILE
+		MENUITEM SEPARATOR
+		MENUITEM "Start &Play",                 IDM_STARTPLAY
+		MENUITEM SEPARATOR
+		MENUITEM "&About...",                   IDM_ABOUT
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit",                       IDM_EXIT
+	END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+DVDSampl ACCELERATORS MOVEABLE PURE
+BEGIN
+	"?",            IDM_ABOUT,              ASCII,  ALT
+	"/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ABOUTBOX DIALOG DISCARDABLE  20, 20, 180, 70
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    ICON            "DDrawXcl",-1,3,2,20,20
+    CTEXT           "DDraw Exclusive Mode Video Playback Sample App",-1,7,30,167,8
+    CTEXT           "Version 1.00",-1,58,40,42,8
+    CTEXT           "Copyright © 1998 - 2000 Microsoft Corp.",-1,29,51,100,8
+    DEFPUSHBUTTON   "OK",IDOK,132,10,32,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 3,5,0,0
+ PRODUCTVERSION 3,5,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "Comments", "Written by: Alok C.\0"
+			VALUE "CompanyName", "Microsoft Corporation\0"
+			VALUE "FileDescription", "Exclusive Mode Video Playback Sample Application\0"
+			VALUE "FileVersion", "0.0\0"
+			VALUE "InternalName", "DDrawXcl\0"
+			VALUE "LegalCopyright", "Copyright (C) Microsoft Corp. 1998-2000\0"
+			VALUE "LegalTrademarks", "Microsoft(R) is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation\0"
+			VALUE "OriginalFilename", "\0"
+			VALUE "ProductName", "DDrawXcl\0"
+			VALUE "ProductVersion", "4.1\0"
+		END
+	BLOCK "041104E4"
+		BEGIN
+			VALUE "Comments", "Written by: Alok C.\0"
+			VALUE "CompanyName", "Microsoft Corporation\0"
+			VALUE "FileDescription", "DDraw Exclusive Mode Video Playback Sample Application\0"
+			VALUE "FileVersion", "0.0\0"
+			VALUE "InternalName", "DDrawXcl\0"
+			VALUE "LegalCopyright", "Copyright (C) Microsoft Corp. 1998-2000\0"
+			VALUE "LegalTrademarks", "Microsoft(R) is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation\0"
+			VALUE "OriginalFilename", "\0"
+			VALUE "ProductName", "DDrawXcl\0"
+			VALUE "ProductVersion", "4.1\0"
+		END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+	VALUE "Translation", 0x409, 0x04E4, 0x411, 0x04E4
+	END
+END
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE
+BEGIN
+   IDS_APP_NAME        "DDrawXcl"
+   IDS_APP_TITLE       "DDraw Exclusive Mode Video Playback Sample Application"
+   IDS_WINDOW_TITLE    "DVD Player"
+   IDS_VER_INFO_LANG   "\\StringFileInfo\\040904E4\\"
+   IDS_VERSION_ERROR   "Error %lu"
+END
+

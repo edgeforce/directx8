@@ -1,0 +1,28 @@
+<!-- In this example, a sequence of bmps are used in motion, as well as   -->
+<!-- some individual stills.  The project is authored at 15fps, so the    -->
+<!-- first bmp sequence will play each bitamp for 3 frames, since it is   -->
+<!-- told the sequence is supposed to play at 5fps to achieve normal      -->
+<!-- playback speed. Then we'll see some still images, with aspect ratios -->
+<!-- preserved, then we'll see the tga sequence again 3 times faster      -->
+<!-- since it is told 15fps is the correct frame rate for that sequence.  -->
+
+<timeline>
+
+  <group type="video" FrameRate="15" Width="480" Height="360" PreviewMode="0">
+    <track>
+	<clip src="c:\mssdk\samples\multimedia\media\shine0.bmp" start="0" stop="2" FrameRate="5"/>
+	<clip src="c:\mssdk\samples\multimedia\media\lake2.jpg" start="2" stop="4" StretchMode="PreserveAspectRatio"/>
+	<clip src="c:\mssdk\samples\multimedia\media\lake3.jpg" start="4" stop="6" StretchMode="PreserveAspectRatio"/>
+	<clip src="c:\mssdk\samples\multimedia\media\caust00.tga" start="6" stop="8" StretchMode="PreserveAspectRatio" FrameRate="15"/>
+	<clip src="c:\mssdk\samples\multimedia\media\dx5_logo.bmp" start="8" stop="10"/>
+
+    </track>
+  </group>
+
+  <group type="audio">
+    <track>
+	<clip src="c:\mssdk\samples\multimedia\media\piano.mp3" start="0" stop="10" />
+    </track>
+  </group>
+</timeline>
+

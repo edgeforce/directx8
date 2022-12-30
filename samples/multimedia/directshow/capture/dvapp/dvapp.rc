@@ -1,0 +1,160 @@
+/**************************************************************************
+ *
+ *  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ *  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ *  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+ *  PURPOSE.
+ *
+ *  Copyright (c) 1993 - 2000  Microsoft Corporation.  All Rights Reserved.
+ *
+ *
+  **************************************************************************/
+#include <dvapp.h>
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+DVICON  ICON    DISCARDABLE     "DVApp.ico"
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Set &Output File..."              IDM_SETOUTPUT
+        MENUITEM "Set &Input File..."               IDM_SETINPUT
+        MENUITEM "&Save Graph to File...",              IDM_OPTIONS_SAVEGRAPH
+        MENUITEM "&Capture Size..."                 IDM_CAPSIZE
+        MENUITEM "E&xit",                           IDM_EXIT
+    END
+
+    POPUP "Graph &Mode"
+    BEGIN
+        MENUITEM "&Preview",                        IDM_PREVIEW, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "&DV To File (Type1)",                     IDM_DVTOFILE
+        MENUITEM "DV To File (Type1) (&no preview)",        IDM_DVTOFILE_NOPRE
+        MENUITEM "&File (Type1) To DV",                     IDM_FILETODV
+        MENUITEM "File (Type1) To DV (no &preview)"         IDM_FILETODV_NOPRE
+        MENUITEM SEPARATOR
+        MENUITEM "D&V To File (Type2)",                     IDM_DVTOFILE_TYPE2
+        MENUITEM "DV To File (Type2) (n&o preview)",        IDM_DVTOFILE_NOPRE_TYPE2
+        MENUITEM "File (&Type2) To DV",                     IDM_FILETODV_TYPE2
+        MENUITEM "File (Type&2) To DV (no preview)"         IDM_FILETODV_NOPRE_TYPE2
+    END 
+
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Refresh Mode",                   IDM_REFRESHMODE
+        MENUITEM "&Check Tape",                     IDM_CHECKTAPE
+        MENUITEM "Change &Decode Size..."           IDM_DECODESIZE
+    END
+
+    POPUP "&Log"
+    BEGIN
+        POPUP "Set &Log Level"
+        BEGIN
+            MENUITEM "&Succinct"                    IDM_LEVEL_SUCCINCT
+            MENUITEM "&Medium"                      IDM_LEVEL_MEDIUM
+            MENUITEM "&Verbose"                     IDM_LEVEL_VERBOSE
+        END
+        POPUP "Set &Priority Level"
+        BEGIN
+            MENUITEM "&Errors"                      IDM_PRIORITY_ERROR
+            MENUITEM "&Warnings"                    IDM_PRIORITY_WARN
+            MENUITEM "&Trace"                       IDM_PRIORITY_INFO
+        END
+    END
+    
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                       IDM_ABOUT
+    END
+
+END
+
+
+IDB_TOOLBAR             BITMAP  DISCARDABLE     "TOOLBAR.BMP"
+
+//tool tip popups
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_STOP           "Stop"
+    IDM_PLAY           "Play"
+    IDM_PAUSE          "Pause"
+    IDM_RECORD         "Record"
+    IDM_FF             "Fast Forward"
+    IDM_REW            "Rewind"
+    IDM_PLAY_FAST_FF   "Play Fast Forward"
+    IDM_PLAY_FAST_REV  "Play Fast Reverse"
+    IDM_STEP_FWD       "Step Forward"
+    IDM_STEP_REV       "Step Reverse"
+    IDM_SEEKTIMECODE   "Seek to Timecode"
+END
+
+//About Dialog
+IDD_ABOUT DIALOG DISCARDABLE  10, 20, 187, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About..."
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Sample Digital Video Application",-1,13,10,175,8,NOT WS_GROUP
+    LTEXT           "Version",-1,13,25,30,8,NOT WS_GROUP
+    LTEXT           DV_CURVER,-1,42,25,20,8,NOT WS_GROUP
+    LTEXT           DV_SPECIALINFO,-1,13,50,100,8,NOT WS_GROUP
+    LTEXT           "Copyright © 1999-2000 Microsoft Corp.",-1,13,35,175,8,NOT WS_GROUP
+    DEFPUSHBUTTON   "OK",IDOK,77,74,32,14,WS_GROUP
+END
+
+
+//Capture size dialog
+IDD_DIALOG_CAPSIZE DIALOG DISCARDABLE  0, 0, 195, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose capture size"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,138,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,138,24,50,14
+    GROUPBOX        "Size &options",IDC_STATIC,12,11,113,52
+    CONTROL         "Capture based on &time",IDC_RADIO_TIME,"Button", BS_AUTORADIOBUTTON,20,24,87,10
+    CONTROL         "Capture based on &size",IDC_RADIO_SIZE,"Button", BS_AUTORADIOBUTTON,20,36,86,10
+    CONTROL         "&No Limit",IDC_RADIO_NOLIMIT,"Button", BS_AUTORADIOBUTTON,20,48,79,10
+    EDITTEXT        IDC_EDIT_TIME,15,90,31,14,ES_NUMBER
+    CONTROL         "Spin2",IDC_SPIN_TIME,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,56,90,10,14
+    EDITTEXT        IDC_EDIT_SIZE,83,90,40,14,ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_SIZE,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,136,90,10,14
+    LTEXT           "Capture time\n(seconds)",IDC_STATIC,14,71,49,17
+    LTEXT           "Capture size\n(MB)",IDC_STATIC,83,71,40,16
+    
+END
+
+//Choose Mode Dialog
+IDD_DIALOG_CHOOSEMODE DIALOG DISCARDABLE  0, 0, 186, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose Camera Mode"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "The application cannot determine the playback mode of the DV camera.  Please choose the correct mode below.",
+                    IDC_STATIC,7,10,172,30
+    PUSHBUTTON      "&Camera",IDC_BUTTON_CAMERA,30,46,50,14
+    PUSHBUTTON      "&Vcr",IDC_BUTTON_VCR,104,46,50,14
+END
+
+//Decode Size Dialog
+IDD_DIALOG_DECODESIZE DIALOG DISCARDABLE  0, 0, 240, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Decode Size"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,180,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,180,24,50,14
+    GROUPBOX        "Choose Decode Size",IDC_STATIC,15,7,155,75
+    CONTROL         "&Full (NTSC: 720x480, PAL: 720x576",IDC_RADIO_720x480,"Button",     BS_AUTORADIOBUTTON,20,21,140,10
+    CONTROL         "&Half (NTSC: 360x240, PAL: 360x288",IDC_RADIO_360x240,"Button", BS_AUTORADIOBUTTON,20,36,140,10
+    CONTROL         "&Quarter (NTSC: 180x120, PAL: 180x144",IDC_RADIO_180x120,"Button", BS_AUTORADIOBUTTON,20,51,140,10
+    CONTROL         "&DC (NTSC: 88x60, PAL: 88x76",IDC_RADIO_88x60,"Button", BS_AUTORADIOBUTTON,20,66,120,10
+END 
+

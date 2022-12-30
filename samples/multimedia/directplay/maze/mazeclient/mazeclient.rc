@@ -1,0 +1,170 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_FLOORTEXTURE        BITMAP  DISCARDABLE     "FloorTexture.bmp"
+IDB_WALLTEXTURE         BITMAP  DISCARDABLE     "WallTexture.bmp"
+IDB_CEILINGTEXTURE      BITMAP  DISCARDABLE     "CeilingTexture.bmp"
+IDB_NETICON             BITMAP  DISCARDABLE     "NetIcon.bmp"
+IDB_LOCALICON           BITMAP  DISCARDABLE     "LocalIcon.bmp"
+IDB_FONTTEXTURE         BITMAP  DISCARDABLE     "Font.bmp"
+IDB_PLAYERICON          BITMAP  DISCARDABLE     "PlayerIcon.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_STARTUP DIALOG DISCARDABLE  0, 0, 186, 161
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "DirectPlayMaze Client"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "Go!",IDOK,40,135,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,135,50,14
+    PUSHBUTTON      "Find sessions",IDC_ENUMERATE,130,10,50,15
+    LISTBOX         IDC_SESSIONLIST,7,48,175,75,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_IPADDRESS,5,10,115,15,ES_AUTOHSCROLL
+    CONTROL         "Search DirectPlayMaze",IDC_DPMAZE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,28,114,12
+END
+
+IDD_SAVERCONFIG DIALOG DISCARDABLE  0, 0, 236, 201
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "DirectPlayMaze Configuration"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,124,180,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,179,180,50,14
+    EDITTEXT        IDC_IPADDRESS,101,53,111,12,ES_AUTOHSCROLL
+    CONTROL         "Reflections",IDC_REFLECTIONS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,143,54,10
+    CONTROL         "Show Framerate",IDC_FRAMERATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,117,65,10
+    CONTROL         "Draw Mini-Map",IDC_MINIMAP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,130,60,10
+    CONTROL         "Show Connection Status",IDC_INDICATORS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,120,117,99,10
+    CONTROL         "Prefer 32-bit mode",IDC_PREFER32BIT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,120,143,70,10
+    GROUPBOX        "Network",IDC_STATIC,7,7,222,94
+    PUSHBUTTON      "Launch",IDC_LAUNCH,7,180,50,14
+    GROUPBOX        "Options",IDC_STATIC,7,104,222,69
+    CONTROL         "Full Screen",IDC_FULLSCREEN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,130,51,10
+    CONTROL         "DirectPlayMaze.rte.microsoft.com",IDC_MICROSOFT,"Button",
+                    BS_AUTORADIOBUTTON,24,28,121,10
+    CONTROL         "Local Server (Search Local Subnet)",IDC_LOCAL_SERVER,
+                    "Button",BS_AUTORADIOBUTTON,24,41,140,10
+    CONTROL         "Remote Server at:",IDC_REMOTE_SERVER,"Button",
+                    BS_AUTORADIOBUTTON,24,54,73,10
+    LTEXT           "Reconnect Delay (min):",IDC_STATIC,18,83,77,8
+    EDITTEXT        IDC_RETRY_DELAY,95,81,24,12,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "Choose One",IDC_STATIC,15,16,208,58
+    CONTROL         "File Logging",IDC_FILELOGGING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,156,54,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_STARTUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_SAVERCONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "DirectX.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
